@@ -1,0 +1,259 @@
+/* ESTILO.CSS - Tema High-Tech para Currículo de Iniciante */
+
+/* --- COMENTÁRIO GERAL PARA OS ALUNOS ---
+   Este arquivo CSS vai dar "vida" e estilo ao nosso HTML.
+   CSS significa "Cascading Style Sheets" (Folhas de Estilo em Cascata).
+   Cada "bloco" de código abaixo é uma "regra CSS".
+   Uma regra tem um "seletor" (ex: body, .hero-section, h1)
+   e depois, entre chaves {}, tem "declarações" (ex: color: white;).
+   Cada declaração tem uma "propriedade" (ex: color) e um "valor" (ex: white),
+   separados por dois pontos (:) e finalizados com ponto e vírgula (;).
+   Os comentários em CSS são feitos assim: /* comentário */
+/* --- FIM DO COMENTÁRIO GERAL --- */
+
+
+/* --- RESET BÁSICO E ESTILOS GLOBAIS --- */
+* {
+    /*
+        O '*' seleciona TODOS os elementos.
+        'box-sizing: border-box;' faz com que padding e border não aumentem
+        o tamanho total da caixa do elemento. Facilita muito o layout!
+    */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif; /* Fonte principal para leitura */
+    background-color: #0a0f18; /* Um azul bem escuro, quase preto, para o fundo */
+    color: #c0c0c0; /* Cor de texto principal - um cinza claro */
+    line-height: 1.6; /* Espaçamento entre linhas para melhor legibilidade */
+}
+
+.container {
+    width: 90%; /* Largura do conteúdo principal */
+    max-width: 960px; /* Largura máxima para não ficar muito largo em telas grandes */
+    margin: 0 auto; /* Truque para centralizar o container na página */
+    padding: 20px 0; /* Espaçamento interno vertical */
+}
+
+/* --- ESTILOS DE TIPOGRAFIA --- */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Orbitron', sans-serif; /* Fonte mais "tech" para títulos */
+    color: #00e5ff; /* Azul ciano vibrante para títulos */
+    margin-bottom: 15px; /* Espaço abaixo dos títulos */
+    font-weight: 400; /* Orbitron pode ser pesada, 400 é um bom começo */
+}
+
+h1.hero-name {
+    font-size: 3.5rem; /* Tamanho grande para o nome principal (rem é uma unidade responsiva) */
+    color: #ffffff; /* Nome principal em branco para destaque */
+    margin-bottom: 5px;
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(0, 229, 255, 0.5); /* Leve brilho no nome */
+}
+
+h2.section-title {
+    font-size: 2rem;
+    border-bottom: 2px solid #00e5ff; /* Linha abaixo do título da seção */
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    text-transform: uppercase; /* Títulos das seções em maiúsculas */
+    letter-spacing: 2px; /* Espaçamento entre letras */
+}
+
+h3 {
+    font-size: 1.4rem;
+    color: #80deea; /* Um tom de ciano mais claro para subtítulos */
+    margin-bottom: 10px;
+}
+
+p {
+    margin-bottom: 15px; /* Espaço abaixo dos parágrafos */
+}
+
+a {
+    color: #00e5ff; /* Links na cor ciano */
+    text-decoration: none; /* Remove o sublinhado padrão */
+    transition: color 0.3s ease, text-shadow 0.3s ease; /* Transição suave para hover */
+}
+
+a:hover {
+    color: #ffffff; /* Links ficam brancos ao passar o mouse */
+    text-shadow: 0 0 8px #00e5ff; /* Efeito de brilho ao passar o mouse */
+}
+
+/* --- HERO SECTION (CABEÇALHO PRINCIPAL) --- */
+.hero-section {
+    background: linear-gradient(135deg, #0a0f18 0%, #101828 100%); /* Gradiente sutil no fundo */
+    padding: 60px 0; /* Espaçamento interno maior */
+    text-align: center; /* Centraliza o texto */
+    border-bottom: 3px solid #00e5ff; /* Borda inferior marcante */
+}
+
+.hero-title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+    color: #98f5ff; /* Ciano um pouco mais claro */
+    margin-bottom: 10px;
+    font-weight: 300;
+}
+
+.hero-tagline {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1rem;
+    color: #c0c0c0;
+    margin-bottom: 30px;
+    font-style: italic;
+}
+
+/* OPCIONAL: Estilo para foto de perfil, se usada */
+/*
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; // Deixa a imagem redonda
+    border: 3px solid #00e5ff;
+    margin-bottom: 20px;
+    box-shadow: 0 0 15px rgba(0, 229, 255, 0.4);
+}
+*/
+
+.social-links a.social-link {
+    display: inline-block; /* Para poder aplicar margem e padding */
+    margin: 0 10px;
+    padding: 8px 15px;
+    border: 1px solid #00e5ff;
+    border-radius: 5px; /* Cantos levemente arredondados */
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+}
+
+.social-links a.social-link:hover {
+    background-color: #00e5ff;
+    color: #0a0f18; /* Cor do fundo ao passar o mouse */
+    box-shadow: 0 0 10px #00e5ff;
+}
+
+/* --- SEÇÕES GERAIS --- */
+.section {
+    padding: 40px 0; /* Espaçamento interno para as seções */
+    border-bottom: 1px solid #1c2a40; /* Linha divisória sutil entre seções */
+}
+
+.section:last-of-type { /* Remove a borda da última seção */
+    border-bottom: none;
+}
+
+/* --- SEÇÃO DE HABILIDADES (SKILLS) --- */
+.skills-category {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: rgba(0, 229, 255, 0.05); /* Fundo muito sutil para categoria */
+    border-left: 3px solid #00e5ff;
+    border-radius: 5px;
+}
+
+.skills-category ul {
+    list-style-type: none; /* Remove as bolinhas padrão da lista */
+    padding-left: 0;
+}
+
+.skills-category li {
+    padding: 5px 0 5px 15px; /* Espaçamento e um recuo à esquerda */
+    position: relative; /* Necessário para o pseudo-elemento ::before */
+    color: #e0e0e0; /* Cor de texto um pouco mais clara para itens de lista */
+}
+
+/* Adiciona um marcador "tech" customizado para os itens da lista */
+.skills-category li::before {
+    content: '»'; /* Ou use '>', '◆', etc. */
+    position: absolute;
+    left: 0;
+    color: #00e5ff;
+    font-weight: bold;
+}
+
+/* --- SEÇÃO DE PROJETOS E FORMAÇÃO --- */
+.project-item, .education-item {
+    background-color: #101828; /* Fundo um pouco mais claro que o body */
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 5px;
+    border: 1px solid #1c2a40; /* Borda sutil */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Sombra sutil */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-item:hover, .education-item:hover {
+    transform: translateY(-5px); /* Efeito de levantar ao passar o mouse */
+    box-shadow: 0 5px 15px rgba(0, 229, 255, 0.1);
+}
+
+.project-item p strong, .education-item p strong {
+    color: #80deea; /* Destaca "Tecnologias:" etc. */
+}
+
+a.project-link {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 12px;
+    background-color: #00e5ff;
+    color: #0a0f18;
+    border-radius: 3px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+a.project-link:hover {
+    background-color: #ffffff;
+    color: #0a0f18;
+    box-shadow: none;
+}
+
+/* --- RODAPÉ (FOOTER) --- */
+.footer-section {
+    text-align: center;
+    padding: 30px 0;
+    background-color: #080c13; /* Fundo do rodapé ainda mais escuro */
+    color: #607d8b; /* Cor de texto mais sutil para o rodapé */
+    font-size: 0.9rem;
+    border-top: 2px solid #1c2a40;
+}
+
+.footer-section p {
+    margin-bottom: 0;
+}
+
+.footer-section #currentYear { /* Estilizando o span do ano */
+    color: #80deea;
+}
+
+/* --- RESPONSIVIDADE BÁSICA (APENAS UM EXEMPLO INICIAL) --- */
+/*
+   COMENTÁRIO PARA OS ALUNOS:
+   Media Queries são usadas para aplicar estilos diferentes dependendo do tamanho da tela.
+   Isso é a base do Design Responsivo (fazer o site funcionar bem em celulares, tablets e desktops).
+   Este é um exemplo muito simples. Design Responsivo é um tópico mais avançado!
+*/
+@media (max-width: 768px) { /* Estilos para telas menores que 768px de largura */
+    h1.hero-name {
+        font-size: 2.5rem;
+    }
+    .hero-title {
+        font-size: 1.2rem;
+    }
+    .container {
+        width: 95%;
+    }
+    .social-links a.social-link {
+        margin: 5px; /* Ajusta margem em telas menores */
+        padding: 6px 10px;
+        font-size: 0.8rem;
+    }
+}
